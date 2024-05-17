@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Master\ItemUnit\" />
+    <Folder Include="Repository\Bills\" />
+    <Folder Include="Repository\Export\" />
+    <Folder Include="Repository\Report\" />
+    <Folder Include="Service\Bills\" />
+    <Folder Include="Service\Export\" />
+    <Folder Include="Service\Report\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MandiERP.Core.Abstraction\MandiERP.Core.Abstraction.csproj" />
+  </ItemGroup>
+
+</Project>

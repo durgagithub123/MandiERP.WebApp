@@ -1,0 +1,26 @@
+﻿CREATE TABLE [dbo].[AccountDetails] (
+    [AccountDetailID] BIGINT         IDENTITY (1, 1) NOT NULL,
+    [AccountDetailNo] BIGINT         NULL,
+    [fkAccountID]     BIGINT         NULL,
+    [Name]            NVARCHAR (500) NULL,
+    [NameHindi]       NVARCHAR (500) NULL,
+    [MobileNo]        VARCHAR (50)   NULL,
+    [PhoneNo]         NVARCHAR (50)  NULL,
+    [Address1]        NVARCHAR (250) NULL,
+    [Address2]        NVARCHAR (250) NULL,
+    [City]            NVARCHAR (50)  NULL,
+    [State]           NVARCHAR (50)  NULL,
+    [Zip]             DECIMAL (18)   NULL,
+    [Country]         NVARCHAR (50)  NULL,
+    [PanNo]           VARCHAR (50)   NULL,
+    [fkBranchID]      INT            NULL,
+    [IsActive]        VARCHAR (20)   CONSTRAINT [DF_AccountDetails_IsActive] DEFAULT ('Active') NULL,
+    [InsertDate]      DATETIME       CONSTRAINT [DF_AccountDetails_InsertDate] DEFAULT (getdate()) NULL,
+    [ModifyDate]      DATETIME       NULL,
+    [CreatedBy]       INT            NULL,
+    [ModifiedBy]      INT            NULL,
+    [Sysdate]         DATETIME       CONSTRAINT [DF_AccountDetails_Sysdate] DEFAULT (getdate()) NULL,
+    CONSTRAINT [DF_AccountDetails_AccountDetailID] PRIMARY KEY CLUSTERED ([AccountDetailID] ASC),
+    CONSTRAINT [FK_AccountDetails_Accounts_fkAccountID] FOREIGN KEY ([fkAccountID]) REFERENCES [dbo].[Accounts] ([AccountID])
+);
+

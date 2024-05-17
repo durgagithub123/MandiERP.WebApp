@@ -1,0 +1,25 @@
+﻿CREATE TABLE [dbo].[GadiDriverMasters] (
+    [GadiDriverMasterID] INT            IDENTITY (1, 1) NOT NULL,
+    [GadiDriverMasterNo] INT            NULL,
+    [fkGadiMasterID]     INT            NULL,
+    [DriverName]         NVARCHAR (500) NULL,
+    [DriverNameHindi]    NVARCHAR (500) NULL,
+    [Address]            NVARCHAR (250) NULL,
+    [City]               NVARCHAR (250) NULL,
+    [State]              NVARCHAR (50)  NULL,
+    [Country]            NVARCHAR (150) NULL,
+    [PinCode]            DECIMAL (18)   NULL,
+    [MobileNo]           VARCHAR (50)   NULL,
+    [PhoneNo]            NVARCHAR (50)  NULL,
+    [EmailID]            NVARCHAR (50)  NULL,
+    [FaxNo]              NVARCHAR (150) NULL,
+    [fkBranchID]         INT            NULL,
+    [IsActive]           VARCHAR (20)   CONSTRAINT [DF_GadiDriverMasters_IsActive]  DEFAULT ('Active') NULL,
+    [CreateBy]           INT            NULL,
+    [CreateDate]         DATETIME       CONSTRAINT [DF_GadiDriverMasters_CreateDate]  DEFAULT (getdate()) NULL,
+    [ModifyBy]           INT            NULL,
+    [ModifyDate]         DATETIME       NULL,
+    [Sysdate]            DATETIME       CONSTRAINT [DF_GadiDriverMasters_Sysdate] DEFAULT (getdate()) NULL,
+    CONSTRAINT [PK_GadiDriverMasters_GadiDriverMasterID]  PRIMARY KEY CLUSTERED ([GadiDriverMasterID] ASC)
+);
+

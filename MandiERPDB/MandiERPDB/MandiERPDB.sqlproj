@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>MandiERPDB</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{d62f633a-dce6-4848-a9c3-5fd0dd99fdb3}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql100DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>MandiERPDB</RootNamespace>
+    <AssemblyName>MandiERPDB</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="Publish" />
+    <Folder Include="dbo\Types" />
+    <Folder Include="dbo\StoredProcedures" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\UserConfigs.sql" />
+    <Build Include="dbo\Tables\UserCMS.sql" />
+    <Build Include="dbo\Tables\UserInRoles.sql" />
+    <Build Include="dbo\Tables\CashBooks.sql" />
+    <Build Include="dbo\Tables\VoucherTypes.sql" />
+    <Build Include="dbo\Tables\Bills.sql" />
+    <Build Include="dbo\Tables\Villages.sql" />
+    <Build Include="dbo\Tables\Users.sql" />
+    <Build Include="dbo\Tables\UserLoginMaster.sql" />
+    <Build Include="dbo\Tables\AccountBankDetails.sql" />
+    <Build Include="dbo\Tables\ItemSaleDetailsHistory.sql" />
+    <Build Include="dbo\Tables\ItemUnits.sql" />
+    <Build Include="dbo\Tables\AccountTransactions.sql" />
+    <Build Include="dbo\Tables\ItemTypes.sql" />
+    <Build Include="dbo\Tables\GadiMasters.sql" />
+    <Build Include="dbo\Tables\GadiDriverMasters.sql" />
+    <Build Include="dbo\Tables\BranchMasters.sql" />
+    <Build Include="dbo\Tables\BillTypes.sql" />
+    <Build Include="dbo\Tables\Configurations.sql" />
+    <Build Include="dbo\Tables\ExportMasters.sql" />
+    <Build Include="dbo\Tables\ItemWeightDetails.sql" />
+    <Build Include="dbo\Tables\ExportItemDetails.sql" />
+    <Build Include="dbo\Tables\BillPayments.sql" />
+    <Build Include="dbo\Tables\ItemSaleDetails.sql" />
+    <Build Include="dbo\Tables\ItemSaleRateDiffs.sql" />
+    <Build Include="dbo\Tables\BillExpenses.sql" />
+    <Build Include="dbo\Tables\AccountTypes.sql" />
+    <Build Include="dbo\Tables\AccountTransactionsHistory.sql" />
+    <Build Include="dbo\Tables\Accounts.sql" />
+    <Build Include="dbo\Tables\UserLogin.sql" />
+    <Build Include="dbo\Tables\UserDetails.sql" />
+    <Build Include="dbo\Tables\UserAccounts.sql" />
+    <Build Include="dbo\Tables\Roles.sql" />
+    <Build Include="dbo\Views\vw_RateDiffBillFinal1.sql" />
+    <Build Include="dbo\Views\vw_RateDiffBillFinal.sql" />
+    <Build Include="dbo\Views\vw_ExportItem_old.sql" />
+    <Build Include="dbo\Views\vw_ExportItem.sql" />
+    <Build Include="dbo\Views\vw_Authentication.sql" />
+    <Build Include="dbo\Views\vw_AccountTransactions.sql" />
+    <Build Include="dbo\Views\vw_AccountList.sql" />
+    <Build Include="dbo\Views\vw_ManageHammaliExport.sql" />
+    <Build Include="dbo\Views\vw_ManageHammaliBills.sql" />
+    <Build Include="dbo\Views\vw_ManageHammali.sql" />
+    <Build Include="dbo\Views\vw_ManageCarats.sql" />
+    <Build Include="dbo\Views\vw_ManageAccountTransaction.sql" />
+    <Build Include="dbo\Views\vw_AccountsBalance.sql" />
+    <Build Include="dbo\Views\vw_HammaliAmount.sql" />
+    <Build Include="dbo\Views\vw_AccountsSaleAmount.sql" />
+    <Build Include="dbo\Views\vw_CashBooks_old.sql" />
+    <Build Include="dbo\Views\vw_BillTotalAmountCW.sql" />
+    <Build Include="dbo\Views\vw_CashBooks.sql" />
+    <Build Include="dbo\Views\vw_BillTotalAmountReportCW.sql" />
+    <Build Include="dbo\Views\vw_CashBookDiff.sql" />
+    <Build Include="dbo\Views\vw_BillPaidAmountFinalCW.sql" />
+    <Build Include="dbo\Views\vw_PartyKhata3.sql" />
+    <Build Include="dbo\Views\vw_PartyKhata2.sql" />
+    <Build Include="dbo\Views\vw_FarmerPhoneAndBankDetails.sql" />
+    <Build Include="dbo\Views\vw_BalanceSheetDetails.sql" />
+    <Build Include="dbo\Views\vw_BalanceSheet.sql" />
+    <Build Include="dbo\Views\vw_BillPaidAmountAccountDetails.sql" />
+    <Build Include="dbo\Views\vw_BillTotalAmountOld.sql" />
+    <Build Include="dbo\Views\vw_BillTotalAmount.sql" />
+    <Build Include="dbo\Views\vw_BillDetailRecords.sql" />
+    <Build Include="dbo\Views\vw_BillDetailCW.sql" />
+    <Build Include="dbo\Views\vw_RateDiffSale1.sql" />
+    <Build Include="dbo\Views\vw_AccountFinal.sql" />
+    <Build Include="dbo\Views\vw_BillDetail_0ld.sql" />
+    <Build Include="dbo\Views\vw_BillDetail.sql" />
+    <Build Include="dbo\Views\vw_RateDiff1.sql" />
+    <Build Include="dbo\Views\vw_RateDiffSaleDateDetails.sql" />
+    <Build Include="dbo\Views\vw_RateDiffSale2.sql" />
+    <Build Include="dbo\Views\vw_BillCommissions.sql" />
+    <Build Include="dbo\Views\vw_PartyKhata1.sql" />
+    <Build Include="dbo\Views\vw_panadetailsSaleMissingPana.sql" />
+    <Build Include="dbo\Views\vw_panadetailsSale.sql" />
+    <Build Include="dbo\Views\vw_panadetailsKharidi.sql" />
+    <Build Include="dbo\Views\vw_panadetails_old.sql" />
+    <Build Include="dbo\Views\vw_panadetails.sql" />
+    <Build Include="dbo\Views\vw_MandiBookv1.sql" />
+    <Build Include="dbo\Views\vw_ExportBilti.sql" />
+    <Build Include="dbo\Views\vw_DailyBillPrint_old.sql" />
+    <Build Include="dbo\Views\vw_DailyBillPrint.sql" />
+    <Build Include="dbo\Views\vw_ExportsOld.sql" />
+    <Build Include="dbo\Views\vw_BillDetailSaleCW.sql" />
+    <Build Include="dbo\Views\vw_BillDetail_ExportBilti_old.sql" />
+    <Build Include="dbo\Views\vw_BillDetail_ExportBilti.sql" />
+    <Build Include="dbo\Views\vw_BillTotalAmountReport.sql" />
+    <Build Include="dbo\Views\vw_AccountTypes.sql" />
+    <Build Include="dbo\Views\vw_BillPaidAmountFinal.sql" />
+    <Build Include="dbo\Views\vw_Exports.sql" />
+    <Build Include="dbo\Views\vw_ExportMasterPrint_old.sql" />
+    <Build Include="dbo\Views\vw_ExportMasterPrint.sql" />
+    <Build Include="dbo\Views\vw_FinalReportExportPart1.sql" />
+    <Build Include="dbo\Views\vw_FinalReportExport.sql" />
+    <Build Include="dbo\Views\vw_PartyKhata.sql" />
+    <Build Include="dbo\Views\vw_ExportCommission.sql" />
+    <Build Include="dbo\Views\vw_ExportBiltiFinalOld.sql" />
+    <Build Include="dbo\Views\vw_BillTotalPaidAmount.sql" />
+    <Build Include="dbo\Views\vw_ExportBiltiFinal.sql" />
+    <Build Include="dbo\Views\vw_BillPaidRecords.sql" />
+    <Build Include="dbo\Views\vw_RateDiffSale.sql" />
+    <Build Include="dbo\Views\vw_UserDetails.sql" />
+    <Build Include="dbo\Views\vw_RateDiffBillSale1.sql" />
+    <Build Include="dbo\Views\vw_ExportBilti_old.sql" />
+    <Build Include="dbo\Views\vw_RateDiffBillSale.sql" />
+    <Build Include="dbo\Views\vw_RateDiff2.sql" />
+    <Build Include="dbo\Views\vw_RateDiff.sql" />
+    <Build Include="dbo\Functions\fun_ProfitLossAccountIDs.sql" />
+    <Build Include="dbo\Functions\fun_GetCashInHandID.sql" />
+    <Build Include="dbo\Functions\fun_GetCashDiscountID.sql" />
+    <Build Include="dbo\Functions\fun_getFarmerName.sql" />
+    <Build Include="dbo\Functions\fun_GetSaleDatebyBillDetailID.sql" />
+    <Build Include="dbo\Functions\fun_GetRatebyBillDetailID.sql" />
+    <Build Include="dbo\Functions\fun_getPartyName.sql" />
+    <Build Include="dbo\Functions\fun_getFarmerNameByItemSaleDetailID.sql" />
+    <Build Include="dbo\Functions\fun_GetExportQuantityCount.sql" />
+    <Build Include="dbo\Functions\fun_GetCompanyID.sql" />
+    <Build Include="dbo\Functions\Split.sql" />
+    <Build Include="dbo\Views\vw_BillDetailOrderCW.sql" />
+    <Build Include="dbo\Views\vw_BillExpenses.sql" />
+    <Build Include="dbo\Views\vw_BillFarmerCommission.sql" />
+    <Build Include="dbo\Tables\ExportExpenses.sql" />
+    <Build Include="dbo\Views\vw_ExportMasterPrintCW.sql" />
+    <Build Include="dbo\Types\utt_ExportMasters.sql" />
+    <Build Include="dbo\Types\utt_ExportItemDetails.sql" />
+    <Build Include="dbo\Types\utt_ExportExpenses.sql" />
+    <Build Include="dbo\StoredProcedures\up_SetDefaultDataChindwada.sql" />
+    <Build Include="dbo\StoredProcedures\up_ResetEntireDatabase.sql" />
+    <Build Include="dbo\StoredProcedures\UpdateBillbyID.sql" />
+    <Build Include="dbo\StoredProcedures\UpdateCashBookID.sql" />
+    <Build Include="dbo\StoredProcedures\SetOpeningBalance.sql" />
+    <Build Include="dbo\StoredProcedures\SaveUser.sql" />
+    <Build Include="dbo\StoredProcedures\usp_BackupDB.sql" />
+    <Build Include="dbo\StoredProcedures\usp_UpdateTransactionAfterExport.sql" />
+    <Build Include="dbo\StoredProcedures\uspBalanceSheet.sql" />
+    <Build Include="dbo\StoredProcedures\uspInsertUpdateRateDiff.sql" />
+    <Build Include="dbo\StoredProcedures\uspRateDiffSalePurchase.sql" />
+    <Build Include="dbo\StoredProcedures\DeleteBillbyID.sql" />
+    <Build Include="dbo\StoredProcedures\DeleteKharidiBill.sql" />
+    <Build Include="dbo\StoredProcedures\GetProfitAndLoss.sql" />
+    <Build Include="dbo\StoredProcedures\GetProfitAndLoss_Backup04Sept16.sql" />
+    <Build Include="dbo\StoredProcedures\GetProfitAndLoss_old.sql" />
+    <Build Include="dbo\StoredProcedures\GetProfitAndLossCW.sql" />
+    <Build Include="dbo\StoredProcedures\GetProfitAndLossPrevious.sql" />
+    <Build Include="dbo\StoredProcedures\InsertAndUpdateLaderExport.sql" />
+    <Build Include="dbo\StoredProcedures\ExportMasters_Upsert.sql" />
+    <Build Include="dbo\Types\utt_Bills.sql" />
+    <Build Include="dbo\Types\utt_BillDetails.sql" />
+    <Build Include="dbo\Types\utt_BillExpenses.sql" />
+    <Build Include="dbo\Types\utt_ItemSaleDetails.sql" />
+    <Build Include="dbo\Functions\fnGetHardwareID.sql" />
+    <Build Include="dbo\Functions\fnGetBillExpenses.sql" />
+    <Build Include="dbo\StoredProcedures\BillExpensesAT_Upsert.sql" />
+    <Build Include="dbo\StoredProcedures\up_SetDefaultData.sql" />
+    <Build Include="dbo\StoredProcedures\Bills_Upsert.sql" />
+    <Build Include="dbo\Functions\fnGetExportExpenses.sql" />
+    <Build Include="dbo\StoredProcedures\ExportExpensesAT_Upsert.sql" />
+    <Build Include="dbo\Views\vw_LedgerDetails.sql" />
+    <Build Include="dbo\Views\vw_BillDetailv1.sql" />
+    <Build Include="dbo\StoredProcedures\up_SetDefaultDataIndore.sql" />
+    <Build Include="dbo\StoredProcedures\up_ResetDatabaseBadnawar.sql" />
+    <Build Include="dbo\StoredProcedures\up_ResetDatabaseIndore.sql" />
+    <Build Include="dbo\Views\vw_CashBookReceipt.sql" />
+    <Build Include="dbo\Views\vw_CashBookIndb.sql" />
+    <Build Include="dbo\Views\vw_BillPaidAmountFinalIndb.sql" />
+    <Build Include="dbo\Views\vw_BillDetailIndb.sql" />
+    <Build Include="dbo\Views\vw_BankAccountDetails.sql" />
+    <Build Include="dbo\Views\vw_ExportItemQuantity.sql" />
+    <Build Include="dbo\Views\vw_PanaDetailsWithExportItems.sql" />
+    <Build Include="dbo\Views\vw_panadetailsAll.sql" />
+    <Build Include="dbo\Views\vw_NakalFarmer.sql" />
+    <Build Include="dbo\Views\vw_panadetailsSaleAll.sql" />
+    <Build Include="dbo\Views\vw_Bills.sql" />
+    <Build Include="dbo\Views\vw_ExpenceModel.sql" />
+    <Build Include="dbo\Views\vw_panadetailsIndb.sql" />
+    <Build Include="dbo\Views\vw_panadetailsSaleIndb.sql" />
+    <Build Include="dbo\StoredProcedures\GetLedgerReport.sql" />
+    <Build Include="dbo\Tables\ItemSaleSummary.sql" />
+    <Build Include="dbo\Views\vw_BillExpenseSummary.sql" />
+    <Build Include="dbo\Views\vw_ItemSaleSummary.sql" />
+    <Build Include="dbo\Views\vw_BillSaleSummary.sql" />
+    <Build Include="dbo\Views\vw_BillQuantityWeightSummary.sql" />
+    <Build Include="dbo\StoredProcedures\Usp_UpsertItemSaleSummaryBill.sql" />
+    <Build Include="dbo\StoredProcedures\Usp_UpsertItemSaleSummaryPartyEdit.sql" />
+    <Build Include="dbo\StoredProcedures\Usp_upsertitemsalesummary.sql" />
+    <Build Include="dbo\StoredProcedures\usp_GetAccounts.sql" />
+    <Build Include="dbo\Views\vw_PanaDetailsWithOpening.sql" />
+    <Build Include="dbo\Views\vw_Stock.sql" />
+    <Build Include="dbo\Functions\fn_GetPanaAmount.sql" />
+    <Build Include="dbo\Tables\BillDetails.sql" />
+    <Build Include="dbo\Tables\ManageHammalis.sql" />
+    <Build Include="dbo\Tables\ManageStocks.sql" />
+    <Build Include="dbo\Tables\ManageCarats.sql" />
+    <Build Include="dbo\Tables\BillPaymentDetails.sql" />
+    <Build Include="dbo\Functions\fun_GetItemNameByExportMasterID.sql" />
+    <Build Include="dbo\Functions\fun_GetItemNameByBillID.sql" />
+    <Build Include="dbo\StoredProcedures\usp_GetUnPaidAmount.sql" />
+    <Build Include="dbo\StoredProcedures\usp_GetUnpaidAccountReport.sql" />
+    <Build Include="dbo\StoredProcedures\uspInsertUpdateRateDifference.sql" />
+    <Build Include="dbo\StoredProcedures\usp_BalanceSheetSummary.sql" />
+    <Build Include="dbo\Views\vw_BillDetailePortal.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Publish\MandiERPDB.publish.xml" />
+    <None Include="MandiERPDB.publish.xml" />
+  </ItemGroup>
+</Project>

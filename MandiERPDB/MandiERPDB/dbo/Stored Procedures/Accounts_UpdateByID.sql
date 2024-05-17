@@ -1,0 +1,77 @@
+﻿
+CREATE PROCEDURE [dbo].[Accounts_UpdateByID] 
+	(
+@AccountID bigint,
+@AccountNo bigint=null,
+@AccountFirmName nvarchar(500)=null,
+@AccountFirmNameHindi nvarchar(500)=null,
+@AccountSortName nvarchar(50)=null,
+@AccountHolderDetail nvarchar(500)=null,
+@fkAccountTypeID int=null,
+@AccountCode varchar(50)=null,
+@AccountFirmCode varchar(100)=null,
+@fkVillageID bigint=null,
+@AccountName nvarchar(500)=null,
+@AccountNameHindi nvarchar(500)=null,
+@AccountMobileNo nvarchar(100)=null,
+@AccountPhoneNo nvarchar(100)=null,
+@AccountAddress1 nvarchar(500)=null,
+@AccountAddress2 nvarchar(500)=null,
+@AccountCity nvarchar(100)=null,
+@AccountState nvarchar(100)=null,
+@AccountZip nvarchar(100)=null,
+@AccountPanNo varchar(50)=null,
+@IsShowonPage varchar(10)=null,
+@fkBranchID int=null,
+@IsActive varchar(20)=null,
+@InsertDate datetime=null,
+@ModifyDate datetime=null,
+@CreatedBy int=null,
+@ModifiedBy int=null,
+@LicenceNo varchar(250)=null,
+@EmailID varchar(2000)=null,
+@Sysdate datetime=null,
+@fkBankAccountID int=null,
+@fkAccountBankDetailID int=null,
+@Remark varchar(500)=null
+)
+AS
+Update  Accounts Set 
+[AccountNo]=@AccountNo,
+[AccountFirmName]=@AccountFirmName,
+[AccountFirmNameHindi]=@AccountFirmNameHindi,
+[AccountSortName]=@AccountSortName,
+[AccountHolderDetail]=@AccountHolderDetail,
+[fkAccountTypeID]=@fkAccountTypeID,
+[AccountCode]=@AccountCode,
+[AccountFirmCode]=@AccountFirmCode,
+[fkVillageID]=@fkVillageID,
+[AccountName]=@AccountName,
+[AccountNameHindi]=@AccountNameHindi,
+[AccountMobileNo]=@AccountMobileNo,
+[AccountPhoneNo]=@AccountPhoneNo,
+[AccountAddress1]=@AccountAddress1,
+[AccountAddress2]=@AccountAddress2,
+[AccountCity]=@AccountCity,
+[AccountState]=@AccountState,
+[AccountZip]=@AccountZip,
+[AccountPanNo]=@AccountPanNo,
+[IsShowonPage]=@IsShowonPage,
+[fkBranchID]=@fkBranchID,
+[IsActive]=@IsActive,
+[InsertDate]=@InsertDate,
+[ModifyDate]=@ModifyDate,
+[CreatedBy]=@CreatedBy,
+[ModifiedBy]=@ModifiedBy,
+[LicenceNo]=@LicenceNo,
+[EmailID]=@EmailID,
+[Sysdate]=@Sysdate,
+[fkBankAccountID]=@fkBankAccountID,
+[fkAccountBankDetailID]=@fkAccountBankDetailID,
+[Remark]=@Remark
+ 
+where 
+[AccountID]=@AccountID
+
+
+Return

@@ -1,0 +1,81 @@
+﻿
+CREATE PROCEDURE [dbo].[ManageCarats_Insert] 
+	(
+@ManageCaratNo bigint=null,
+@ManageCaratCode varchar(100)=null,
+@ManageCaratDetail varchar(100)=null,
+@fkAccountID bigint=null,
+@IsCompanyAccount varchar(50)=null,
+@fkBillID int=null,
+@fkExportID int=null,
+@TransactionDate datetime=null,
+@TransactionDetail varchar(250)=null,
+@DebitCarat decimal=null,
+@CreditCarat decimal=null,
+@IsDebitOrCredit nvarchar(50)=null,
+@BalanceCarat int=null,
+@RecieptType varchar(20)=null,
+@Remark varchar(200)=null,
+@Comment varchar(200)=null,
+@fkBranchID int=null,
+@IsActive varchar(20)=null,
+@InsertDate datetime=null,
+@ModifyDate datetime=null,
+@CreatedBy int=null,
+@ModifiedBy int=null,
+@Sysdate datetime=null
+)
+AS
+Insert Into 
+ManageCarats 
+(
+[ManageCaratNo],
+[ManageCaratCode],
+[ManageCaratDetail],
+[fkAccountID],
+[IsCompanyAccount],
+[fkBillID],
+[fkExportID],
+[TransactionDate],
+[TransactionDetail],
+[DebitCarat],
+[CreditCarat],
+[IsDebitOrCredit],
+[BalanceCarat],
+[RecieptType],
+[Remark],
+[Comment],
+[fkBranchID],
+[IsActive],
+[InsertDate],
+[ModifyDate],
+[CreatedBy],
+[ModifiedBy],
+[Sysdate]
+) 
+values(
+@ManageCaratNo,
+@ManageCaratCode,
+@ManageCaratDetail,
+@fkAccountID,
+@IsCompanyAccount,
+@fkBillID,
+@fkExportID,
+@TransactionDate,
+@TransactionDetail,
+@DebitCarat,
+@CreditCarat,
+@IsDebitOrCredit,
+@BalanceCarat,
+@RecieptType,
+@Remark,
+@Comment,
+@fkBranchID,
+@IsActive,
+@InsertDate,
+@ModifyDate,
+@CreatedBy,
+@ModifiedBy,
+@Sysdate
+)
+RETURN Scope_identity()

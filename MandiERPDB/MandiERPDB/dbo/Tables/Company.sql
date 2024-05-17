@@ -1,0 +1,26 @@
+﻿CREATE TABLE [dbo].[Company] (
+    [CompanyID]        INT             IDENTITY (1, 1) NOT NULL,
+    [CompanyNo]        INT             NULL,
+    [CompanyName]      VARCHAR (250)   NULL,
+    [CompanyNameHindi] NVARCHAR (250)  NULL,
+    [CPlanYear]        VARCHAR (250)   NULL,
+    [CAddress1]        VARCHAR (4000)  NULL,
+    [CAddress1Hindi]   NVARCHAR (4000) NULL,
+    [CAddress2]        VARCHAR (4000)  NULL,
+    [CAddress2Hindi]   NVARCHAR (4000) NULL,
+    [CPhoneNo]         VARCHAR (100)   NULL,
+    [CMobileNo]        VARCHAR (100)   NULL,
+    [CCity]            VARCHAR (100)   NULL,
+    [CState]           VARCHAR (100)   NULL,
+    [CZip]             VARCHAR (100)   NULL,
+    [CEmail]           VARCHAR (100)   NULL,
+    [fkBranchID]       INT             NULL,
+    [IsActive]         VARCHAR (20)    DEFAULT ('Active') NULL,
+    [CreateBy]         INT             NULL,
+    [CreateDate]       DATETIME        DEFAULT (getdate()) NULL,
+    [ModifyBy]         INT             NULL,
+    [ModifyDate]       DATETIME        NULL,
+    [Sysdate]          DATETIME        DEFAULT (getdate()) NULL,
+    PRIMARY KEY CLUSTERED ([CompanyID] ASC)
+);
+
