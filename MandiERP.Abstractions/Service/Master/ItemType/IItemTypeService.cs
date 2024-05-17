@@ -2,6 +2,9 @@
 
 namespace MandiERP.Abstractions.Service
 {
+    /// <summary>
+    /// Item Type Service
+    /// </summary>
     public interface IItemTypeService
     {
         Task<ItemTypeDto> GetItemTypeAsync(int id);
