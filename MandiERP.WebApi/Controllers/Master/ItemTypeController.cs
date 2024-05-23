@@ -95,6 +95,5 @@ namespace MandiERP.WebApi.Controllers.Master
                 return StatusCode(500, "Internal server error");
             }
         }
-
     }
 }

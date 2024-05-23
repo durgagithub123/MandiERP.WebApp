@@ -14,8 +14,14 @@ namespace MandiERP.Persistence
             var connectionString = configuration.GetConnectionString("MandiERPConnectionString");
             services.AddDbContext<MandiERPDbContext>
                   (o => o.UseSqlServer(connectionString));
+
+
             services.AddScoped<IItemTypeRepository, ItemTypeRepository>();
             services.AddScoped<IVillageRepository, VillageRepository>();
+            services.AddScoped<IItemUnitRepository, ItemUnitRepository>();
+            services.AddScoped<IAccountRepository, AccountRepository>();
+
+         
 
             #region for Reference
 

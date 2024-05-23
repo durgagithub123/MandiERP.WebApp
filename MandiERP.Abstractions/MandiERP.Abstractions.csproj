@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Master\ItemUnit\" />
     <Folder Include="Repository\Bills\" />
     <Folder Include="Repository\Export\" />
     <Folder Include="Repository\Report\" />

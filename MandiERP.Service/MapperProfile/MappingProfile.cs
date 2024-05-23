@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MandiERP.Abstractions.Master;
+using MandiERP.Abstractions.Master;
 using MandiERP.Core.Abstraction;
 
 namespace MandiERP.Service.MapperProfile
@@ -16,6 +17,15 @@ namespace MandiERP.Service.MapperProfile
             CreateMap<Village, VillageDto>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.VillageID))
                 .ReverseMap();
+
+            CreateMap<ItemUnits, ItemUnitsDto>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.ItemUnitID))
+                .ReverseMap();
+
+            CreateMap<Account, AccountDto>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.AccountId))
+                .ReverseMap();
+            
         }
     }
 }

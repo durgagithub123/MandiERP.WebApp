@@ -1,4 +1,5 @@
 ﻿using MandiERP.Abstractions.Service;
+using MandiERP.Abstractions.Service.Master.ItemUnit;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace MandiERP.Service
@@ -9,6 +10,8 @@ namespace MandiERP.Service
         {
             services.AddScoped<IItemTypeService, ItemTypeService>();
             services.AddScoped<IVillageService, VillageService>();
+            services.AddScoped<IItemUnitService, ItemUnitService>();
+            services.AddScoped<IAccountService, AccountService>();
 
             return services;
         }

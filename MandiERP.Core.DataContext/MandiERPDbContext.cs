@@ -12,12 +12,26 @@ namespace MandiERP.DataLayer
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            ////// Configure primary key for ItemUnits By Durga ////////
+            modelBuilder.Entity<ItemUnits>(entity =>
+            {
+                entity.HasKey(e => e.ItemUnitID);
+            });
+
+            //modelBuilder.Entity<Account>(entity =>
+            //{
+            //    entity.HasKey(e => e.AccountId);
+            //    // Additional configuration if needed
+            //});
+            ///////////////////////////////////////////////////////////////////////
         }
         #region DbSet Adding in Controller
         public virtual DbSet<Village> Villages { get; set; }
         public virtual DbSet<ItemType> ItemTypes { get; set; }
-        //public virtual DbSet<ItemUnit> ItemUnits { get; set; }
-        //public virtual DbSet<Account> Accounts { get; set; }
+        public virtual DbSet<ItemUnits> ItemUnits { get; set; }
+        public virtual DbSet<Account> Accounts { get; set; }
+
         //public DbSet<MandiERP.Model.DB.Bill>? Bill { get; set; }
         #endregion
 
