@@ -20,7 +20,7 @@ namespace MandiERP.Persistence
         public async Task<IEnumerable<Account>> GetAllAccountsAsync()
         {
             return await _context.Accounts.ToListAsync();
-        }
+        } 
         public async Task<Account> CreateAccountAsync(Account account)
         {
             _context.Accounts.Add(account);

@@ -2,6 +2,7 @@
 using MandiERP.Abstractions.Master;
 using MandiERP.Abstractions.Master;
 using MandiERP.Core.Abstraction;
+using Microsoft.Data.SqlClient;
 
 namespace MandiERP.Service.MapperProfile
 {
@@ -23,7 +24,26 @@ namespace MandiERP.Service.MapperProfile
                 .ReverseMap();
 
             CreateMap<Account, AccountDto>()
-                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.AccountId))
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.AccountID))
+                .ReverseMap();
+
+            CreateMap<AccountTypes, AccountTypesDto>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.AccountTypeID))
+                .ReverseMap();
+
+            CreateMap<ItemSaleRateDiff, ItemSaleRateDiffDto>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.ItemSaleRateDiffID))
+                .ReverseMap();
+
+            CreateMap<ItemWeightDetails, ItemWeightDetailsDto>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.ItemWeightDetailID))
+                .ReverseMap();
+
+            CreateMap<ItemSaleDetails, ItemSaleDetailsDto>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.ItemSaleDetailID))
+                .ReverseMap();
+            CreateMap<BillDetails, BillDetailsDto>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.BillDetailID))
                 .ReverseMap();
             
         }

@@ -18,12 +18,43 @@ namespace MandiERP.DataLayer
             {
                 entity.HasKey(e => e.ItemUnitID);
             });
+            // Configure the primary key for Account
+            modelBuilder.Entity<Account>(entity =>
+            {
+                entity.HasKey(e => e.AccountID);
 
-            //modelBuilder.Entity<Account>(entity =>
-            //{
-            //    entity.HasKey(e => e.AccountId);
-            //    // Additional configuration if needed
-            //});
+                // Define foreign key relationship in Account for AccountTypes
+                entity.HasOne(e => e.AccountTypes)
+                      .WithMany(at => at.Accounts)
+                      .HasForeignKey(e => e.FkAccountTypeID);
+            });
+            // Configure the primary key for AccountTypes
+            modelBuilder.Entity<AccountTypes>(entity =>
+            {
+                entity.HasKey(e => e.AccountTypeID);
+            });
+            // Configure the primary key for ItemSaleRateDiff
+            modelBuilder.Entity<ItemSaleRateDiff>(entity =>
+            {
+                entity.HasKey(e => e.ItemSaleRateDiffID);
+            });
+            // Configure the primary key for BillDetail
+            modelBuilder.Entity<BillDetails>(entity =>
+            {
+                entity.HasKey(e => e.BillDetailID);
+            });
+            // Configure the primary key for ItemSaleDetail
+            modelBuilder.Entity<ItemSaleDetails>(entity =>
+            {
+                entity.HasKey(e => e.ItemSaleDetailID);
+            });
+            // Configure the primary key for ItemWeightDetail
+            modelBuilder.Entity<ItemWeightDetails>(entity =>
+            {
+                entity.HasKey(e => e.ItemWeightDetailID);
+            });
+
+
             ///////////////////////////////////////////////////////////////////////
         }
         #region DbSet Adding in Controller
@@ -31,6 +62,11 @@ namespace MandiERP.DataLayer
         public virtual DbSet<ItemType> ItemTypes { get; set; }
         public virtual DbSet<ItemUnits> ItemUnits { get; set; }
         public virtual DbSet<Account> Accounts { get; set; }
+        public virtual DbSet<AccountTypes> AccountTypes { get; set; }
+        public virtual DbSet<BillDetails> BillDetails { get; set; }
+        public virtual DbSet<ItemSaleDetails> ItemSaleDetails { get; set; }
+        public virtual DbSet<ItemSaleRateDiff> ItemSaleRateDiffs { get; set;}
+        public virtual DbSet<ItemWeightDetails> ItemWeightDetails { get; set; }
 
         //public DbSet<MandiERP.Model.DB.Bill>? Bill { get; set; }
         #endregion

@@ -1,5 +1,6 @@
 ﻿using MandiERP.Abstractions.Repository;
 using MandiERP.DataLayer;
+using MandiERP.Persistence.Master;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,7 +21,11 @@ namespace MandiERP.Persistence
             services.AddScoped<IVillageRepository, VillageRepository>();
             services.AddScoped<IItemUnitRepository, ItemUnitRepository>();
             services.AddScoped<IAccountRepository, AccountRepository>();
-
+            services.AddScoped<IAccountTypeRepository, AccountTypeRepository>();
+            services.AddScoped<IItemSaleRateDiffRepository, ItemSaleRateDiffRepository>();
+            services.AddScoped<IItemWeightDetailRepository, ItemWeightDetailRepository>();
+            services.AddScoped<IItemSaleDetailRepository, ItemSaleDetailRepository>();
+            services.AddScoped<IBillDetailsRepository, BillDetailsRepository>();
          
 
             #region for Reference

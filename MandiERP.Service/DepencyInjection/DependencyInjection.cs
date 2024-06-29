@@ -12,6 +12,11 @@ namespace MandiERP.Service
             services.AddScoped<IVillageService, VillageService>();
             services.AddScoped<IItemUnitService, ItemUnitService>();
             services.AddScoped<IAccountService, AccountService>();
+            services.AddScoped<IAccountTypeService, AccountTypeService>();
+            services.AddScoped<IItemSaleRateDiffService, ItemSaleRateDiffService>();
+            services.AddScoped<IItemWeightDetailService, ItemWeightDetailService>();
+            services.AddScoped<IItemSaleDetailService, ItemSaleDetailService>();
+            services.AddScoped<IBillDetailsService, BillDetailsService>();
 
             return services;
         }

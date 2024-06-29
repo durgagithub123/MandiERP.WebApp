@@ -61,11 +61,11 @@ const Account = {
 //   deleteAccountBankDetail: (id: number) => requests.delete(`/api/AccountBankDetails/${id}`)
 // }
 
-//https://localhost:5000/api/AccountTypes
-// const AccountTpes = {
-//   getAccountType: () => requests.get('/api/AccountTypes'),
-//   createAccounTypest: (data: any) => requests.post('/api/AccountTypes', data),
-// }
+//https://localhost:7071/api/AccountType
+const AccountTpes = {
+  getAccountType: () => requests.get('/api/AccountType'),
+  createAccounTypest: (data: any) => requests.post('/api/AccountType', data),
+}
 
 //Durga's : https://localhost:5000/api/Bills
 // const Bill = {
@@ -105,7 +105,7 @@ const api = {
     Unit,
     Account,
     //AccountBankDetail,
-    //AccountTpes,
+    AccountTpes,
     //Bill,
     // BillDetail,
     // ItemSaleDetail,

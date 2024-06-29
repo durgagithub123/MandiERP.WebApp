@@ -8,7 +8,7 @@
         public string? AccountFirmNameHindi { get; set; }
         public string? AccountSortName { get; set; }
         public string? AccountHolderDetail { get; set; }
-        public int? FkAccountTypeId { get; set; }
+        public int? FkAccountTypeID { get; set; }
         public string? AccountCode { get; set; }
         public string? AccountFirmCode { get; set; }
         public long? FkVillageId { get; set; }
