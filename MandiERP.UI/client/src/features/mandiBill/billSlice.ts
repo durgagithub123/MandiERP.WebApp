@@ -458,8 +458,6 @@ export const fetchGadiMastersAsync = createAsyncThunk<GadiMasters[], void, { sta
         }
     }
 )
-
-
 export const gadiMastersSlice = createSlice({
     name: 'GadiMasters',
     initialState: gadiMastersAdapter.getInitialState<GadiMastersState>({

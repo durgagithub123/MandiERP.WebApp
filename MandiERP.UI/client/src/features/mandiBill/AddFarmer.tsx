@@ -16,7 +16,8 @@ interface Props {
 export default function AddFarmer({ onFieldsChange }: Props) {
     const dispatch = useAppDispatch();
     const { control, setValue, watch } = useForm();
-    const { cities } = useAppSelector(state => state.village);
+    //const { cities } = useAppSelector(state => state.village);
+    const { cities } = useAppSelector(state => state.village) || { cities: [] }; // Ensure cities is always an array
     const accountName = watch('accountName');
     const accountMobileNo = watch('accountMobileNo');
     const accountCity = watch('accountCity');

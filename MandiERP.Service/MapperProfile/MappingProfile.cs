@@ -45,7 +45,13 @@ namespace MandiERP.Service.MapperProfile
             CreateMap<BillDetails, BillDetailsDto>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.BillDetailID))
                 .ReverseMap();
-            
+            CreateMap<GadiMaster, GadiMasterDto>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.GadiMasterID))
+                .ReverseMap();
+            CreateMap<AccountBankDetail, AccountBankDetailDto>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.AccountBankDetailID))
+                .ReverseMap();
+
         }
     }
 }

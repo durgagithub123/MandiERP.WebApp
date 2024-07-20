@@ -11,7 +11,7 @@ export interface Account {
     accountFirmNameHindi: string
     accountSortName: string
     accountHolderDetail: string
-    fkAccountTypeId: number //id from accountType 
+    fkAccountTypeID: number //id from accountType 
     accountCode: string
     accountFirmCode: string
     fkVillageId: number   //from village

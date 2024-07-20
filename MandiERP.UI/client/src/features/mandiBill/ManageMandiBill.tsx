@@ -41,8 +41,18 @@ export default function ManageMandiBill() {
     const gadiBhadaValue = watch('gadiBhada');
 
     // falrmers List
-    const farmers = allAccounts.filter((account) => account.fkVillageId === selectedVillageId && account.fkAccountTypeId === 7);
+    const farmers = allAccounts.filter((account) => account.fkVillageId === selectedVillageId && account.fkAccountTypeID === 7);
     const farmerNames = [...new Set(farmers.map((farmer) => farmer.accountFirmName))];
+
+    allAccounts.forEach((account) => {
+        console.log('fkVillageId : ',account.fkVillageId);
+         console.log('fkAccountTypeID : ',account.fkAccountTypeID)
+
+      });
+    //console.log(account.fkVillageId)//account.fkAccountTypeId
+    //console.log(account.fkAccountTypeId)//
+
+
 
     // bankAccount List
     const accounts = allBankAccounts.filter((account) => account.fkAccountId === selectedFarmerId);

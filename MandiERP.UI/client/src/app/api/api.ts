@@ -53,13 +53,13 @@ const Account = {
   updateAccount: (id:number,data: any) => requests.put(`/api/Account/${id}`, data),
   deleteAccount: (id: number) => requests.delete(`/api/Account/${id}`)
 }
-//https://localhost:5000/api/AccountBankDetails
-// const AccountBankDetail = {
-//   getAccountBankDetail: () => requests.get('/api/AccountBankDetails'),
-//   createAccountBankDetail: (data: any) => requests.post('/api/AccountBankDetails', data),
-//   updateAccountBankDetail: (id:number,data: any) => requests.put(`/api/AccountBankDetails/${id}`, data),
-//   deleteAccountBankDetail: (id: number) => requests.delete(`/api/AccountBankDetails/${id}`)
-// }
+//https://localhost:7071/api/AccountBankDetail
+const AccountBankDetail = {
+  getAccountBankDetail: () => requests.get('/api/AccountBankDetail'),
+  createAccountBankDetail: (data: any) => requests.post('/api/AccountBankDetail', data),
+  updateAccountBankDetail: (id:number,data: any) => requests.put(`/api/AccountBankDetail/${id}`, data),
+  deleteAccountBankDetail: (id: number) => requests.delete(`/api/AccountBankDetail/${id}`)
+}
 
 //https://localhost:7071/api/AccountType
 const AccountTpes = {
@@ -93,23 +93,23 @@ const AccountTpes = {
 //   deleteItemSaleDetail: (id: number) => requests.delete(`/api/ItemSaleDetails/${id}`),
 // }
 
-//https://localhost:5000/api/GadiMasters
-// const GadiMasters = {
-//   getGadiMasters: () => requests.get('/api/GadiMasters'),
-//   createGadiMasters: (data: any) => requests.post('/api/GadiMasters ', data)
-// }
+//https://localhost:7071/api/GadiMaster
+const GadiMasters = {
+  getGadiMasters: () => requests.get('/api/GadiMaster'),
+  createGadiMasters: (data: any) => requests.post('/api/GadiMaster ', data)
+}
 
 const api = {
     Village,
     Item,
     Unit,
     Account,
-    //AccountBankDetail,
+    AccountBankDetail,
     AccountTpes,
     //Bill,
     // BillDetail,
     // ItemSaleDetail,
-    // GadiMasters
+     GadiMasters
 }
 
 export default api;

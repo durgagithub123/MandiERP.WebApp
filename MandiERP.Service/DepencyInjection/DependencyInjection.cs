@@ -17,6 +17,8 @@ namespace MandiERP.Service
             services.AddScoped<IItemWeightDetailService, ItemWeightDetailService>();
             services.AddScoped<IItemSaleDetailService, ItemSaleDetailService>();
             services.AddScoped<IBillDetailsService, BillDetailsService>();
+            services.AddScoped<IGadiMasterService, GadiMasterService>();
+            services.AddScoped<IAccountBankDetailService, AccountBankDetailService>();
 
             return services;
         }

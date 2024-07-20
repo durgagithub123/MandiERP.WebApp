@@ -53,6 +53,17 @@ namespace MandiERP.DataLayer
             {
                 entity.HasKey(e => e.ItemWeightDetailID);
             });
+            // Configure the primary key for GadiMaster
+            modelBuilder.Entity<GadiMaster>(entity =>
+            {
+                entity.HasKey(e => e.GadiMasterID);
+            });
+            // Configure the primary key for AccountBankDetail
+            modelBuilder.Entity<AccountBankDetail>(entity =>
+            {
+                entity.HasKey(e => e.AccountBankDetailID);
+            });
+
 
 
             ///////////////////////////////////////////////////////////////////////
@@ -67,6 +78,8 @@ namespace MandiERP.DataLayer
         public virtual DbSet<ItemSaleDetails> ItemSaleDetails { get; set; }
         public virtual DbSet<ItemSaleRateDiff> ItemSaleRateDiffs { get; set;}
         public virtual DbSet<ItemWeightDetails> ItemWeightDetails { get; set; }
+        public virtual DbSet<GadiMaster> GadiMasters { get; set; }
+        public virtual DbSet<AccountBankDetail> AccountBankDetails { get; set; }
 
         //public DbSet<MandiERP.Model.DB.Bill>? Bill { get; set; }
         #endregion

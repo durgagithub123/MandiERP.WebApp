@@ -1,4 +1,5 @@
-﻿using MandiERP.Abstractions.Repository;
+﻿using MandiERP.Abstractions;
+using MandiERP.Abstractions.Repository;
 using MandiERP.DataLayer;
 using MandiERP.Persistence.Master;
 using Microsoft.EntityFrameworkCore;
@@ -26,6 +27,8 @@ namespace MandiERP.Persistence
             services.AddScoped<IItemWeightDetailRepository, ItemWeightDetailRepository>();
             services.AddScoped<IItemSaleDetailRepository, ItemSaleDetailRepository>();
             services.AddScoped<IBillDetailsRepository, BillDetailsRepository>();
+            services.AddScoped<IGadiMasterRepository, GadiMasterRepository>();
+            services.AddScoped<IAccountBankDetailRepository, AccountBankDetailRepository>();
          
 
             #region for Reference
